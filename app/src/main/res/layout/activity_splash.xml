@@ -15,8 +15,7 @@
         app:banner_pointAutoPlayAble="false"
         app:banner_pointContainerBackground="@android:color/transparent"
         app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
-        app:banner_pointTopBottomMargin="15dp"
-        app:banner_transitionEffect="fade" />
+        app:banner_pointTopBottomMargin="15dp" />
 
     <TextView
         android:id="@+id/tv_skip"
@@ -31,17 +30,17 @@
         android:textSize="16dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
         android:id="@+id/btn_enter"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
         android:background="@drawable/selector_btn_test"
         android:text="进入主界面"
-        android:padding="8dp"
+        android:padding="4dp"
         android:textColor="#FFFF"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:visibility="gone"
         tools:visibility="visible"/>
 

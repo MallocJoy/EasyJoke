@@ -8,7 +8,13 @@
     android:orientation="vertical"
     tools:context="com.utouu.easyjoke.MainActivity">
 
-    <android.support.v4.view.ViewPager
+    <include
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        layout="@layout/layout_title"/>
+
+    <com.utouu.easyjoke.NoScrollViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

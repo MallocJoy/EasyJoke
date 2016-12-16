@@ -2,16 +2,14 @@ package com.utouu.easyjoke;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import com.flyco.tablayout.CommonTabLayout;
+import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.pacific.adapter.Adapter;
 import com.pacific.adapter.FragmentStatePagerAdapter2;
-import com.pacific.adapter.PagerAdapterHelper;
-import com.pacific.adapter.ViewPagerAdapter;
 
 import java.util.ArrayList;
 
@@ -21,6 +19,10 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     private String[] mTitles = {"首页", "发现", "新鲜", "消息"};
+    private String[] mTitles2 = {"精选","关注"};
+    private String[] mTitles3 = {"热吧","订阅"};
+    private String[] mTitles4 = {"新鲜"};
+    private String[] mTitles5 = {"消息"};
     private int[] mIconUnselectIds = {
             R.drawable.ic_tab_home_normal, R.drawable.ic_tab_discovery_normal,
             R.drawable.ic_tab_fresh_normal, R.drawable.ic_tab_msg_normal};
@@ -28,11 +30,17 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_tab_home_pressed, R.drawable.ic_tab_discovery_pressed,
             R.drawable.ic_tab_fresh_pressed, R.drawable.ic_tab_msg_pressed};
 
-    @BindView(R.id.viewPager) ViewPager viewPager;
+    @BindView(R.id.viewPager) NoScrollViewPager viewPager;
+    @BindView(R.id.iv_head) ImageView ivHead;
+    @BindView(R.id.iv_publish) ImageView ivPublish;
+
+    @BindView(R.id.stLayout) SegmentTabLayout stLayout;
     @BindView(R.id.ctLayout) CommonTabLayout ctLayout;
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
+
+    private FragmentStatePagerAdapter2 adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
         initCommTabLayout();
 
-        FragmentStatePagerAdapter2  adapter = new FragmentStatePagerAdapter2(
+        setAdapter();
+    }
+
+    private void setAdapter() {
+        adapter = new FragmentStatePagerAdapter2(
                 getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -56,46 +68,38 @@ public class MainActivity extends AppCompatActivity {
                 return mFragments.size();
             }
         };
-
+        viewPager.setCanScrollble(false);
         viewPager.setAdapter(adapter);
     }
 
     private void initCommTabLayout() {
-
+        stLayout.setTabData(mTitles2);
         ctLayout.setTabData(mTabEntities);
         ctLayout.setOnTabSelectListener(new OnTabSelectListener() {
 
             @Override  //关联ViewPager
             public void onTabSelect(int position) {
                 viewPager.setCurrentItem(position);
+
+                if (position ==0){
+                    stLayout.setTabData(mTitles2);
+                    ivHead.setImageResource(R.drawable.default_round_head);
+                    ivPublish.setImageResource(R.drawable.ic_publish);
+                }else if (position ==1){
+                    stLayout.setTabData(mTitles3);
+                    ivHead.setImageResource(R.drawable.ic_discovery_search);
+                    ivPublish.setImageResource(R.drawable.ic_nearby);
+                }else if (position == 2){
+                    stLayout.setTabData(mTitles4);
+                }else {
+                    stLayout.setTabData(mTitles5);
+                }
             }
 
             @Override   //设置点击产生随机消息数
-            public void onTabReselect(int position) {}});
-
-        /**
-         * ViewPager的滑动监听事件，与TabLayout相关联
-         */
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                ctLayout.setCurrentTab(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
+            public void onTabReselect(int position) {
             }
         });
-
-        /**
-         * 设置进入界面显示当前
-         */
         viewPager.setCurrentItem(0);
     }
 
@@ -104,10 +108,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
-
-        mFragments.add(new SimpleFragment());
-        mFragments.add(new SimpleFragment());
-        mFragments.add(new SimpleFragment());
-        mFragments.add(new SimpleFragment());
+        mFragments.add(new FirstPageFragment());
+        mFragments.add(new SecondPageFragment());
+        mFragments.add(new ThirdPageFragment());
+        mFragments.add(new FourthPageFragment());
     }
 }

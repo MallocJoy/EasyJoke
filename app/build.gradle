@@ -55,4 +55,6 @@ dependencies {
 
     //Use for adapter
     compile 'com.github.thepacific:adapter:1.0.7'
+
+    compile 'com.github.MarnonDev:RapidLibs:v1.1.8'
 }

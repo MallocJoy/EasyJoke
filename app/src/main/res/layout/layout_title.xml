@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/titleBar"
+    android:background="#DED9D1"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="42dp">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_gravity="start"
+        android:layout_width="50dp"
+        android:padding="3dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/default_round_head" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/stLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        app:tl_bar_color="#DED9D1"
+        app:tl_indicator_color="#6D554A"
+        app:tl_indicator_corner_radius="3dp"
+        app:tl_tab_padding="20dp" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/iv_publish"
+        android:layout_width="50dp"
+        android:padding="3dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_publish" />
+</LinearLayout>

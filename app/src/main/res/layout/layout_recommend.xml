@@ -7,10 +7,22 @@
     <TextView
         android:id="@+id/tv_indicate"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="这里是推荐页面"
         android:gravity="center"
         android:textSize="30dp"
         android:textColor="#55ad1daf"/>
+
+    <Button
+        android:id="@+id/ban_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请求相机权限"/>
+
+    <Button
+        android:id="@+id/ban_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请求读写权限"/>
 
 </LinearLayout>

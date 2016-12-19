@@ -1,8 +1,12 @@
 package com.utouu.easyjoke;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +31,11 @@ public class SecondPageFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.layout_recommend, container, false);
         ButterKnife.bind(this, rootView);
-        tvIndicate.setText("这里是发现页面");
+
+        SpannableString str = new SpannableString("这里是发现页面");
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.parseColor("#009ad6"));
+        str.setSpan(colorSpan,0,2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        tvIndicate.setText(str);
 
         return rootView;
     }

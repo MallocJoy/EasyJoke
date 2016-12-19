@@ -10,8 +10,18 @@ import rx.Observable;
  * Function：网络访问接口定义
  * Desc：
  */
-public interface IServiceManager {
+interface IServiceManager {
 
     @GET("stream/mix/v1/")
-    Observable<ResponseBody>  getVideoJsonStr(@Query("content_type") int content_type);
+    Observable<ResponseBody>  getVideoJsonStr(
+            @Query("content_type") int content_type);
+
+    @GET("/login")
+    Observable<String> login(
+            @Query("username") String username,
+            @Query("password") String password);
+
+    @GET("/user")
+    Observable<User>  getUser(
+            @Query("token") String token);
 }

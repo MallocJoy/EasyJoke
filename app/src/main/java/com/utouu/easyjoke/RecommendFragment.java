@@ -265,7 +265,6 @@ public class RecommendFragment extends Fragment {
     }
 
     private void btnForWritePermission() {
-
         if (context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
             requestPermissions(new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,

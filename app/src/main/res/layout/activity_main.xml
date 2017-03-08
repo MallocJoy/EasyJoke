@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.utouu.easyjoke.MainActivity">
+    tools:context="com.utouu.easyjoke.module.main.MainActivity">
 
     <include
         android:id="@+id/titleLayout"
@@ -14,7 +14,7 @@
         android:layout_height="42dp"
         layout="@layout/layout_title"/>
 
-    <com.utouu.easyjoke.NoScrollViewPager
+    <com.utouu.easyjoke.widgets.NoScrollViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

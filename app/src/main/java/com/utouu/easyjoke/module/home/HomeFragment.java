@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.module.home;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,11 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.flyco.tablayout.SlidingTabLayout;
-import com.orhanobut.logger.Logger;
 import com.pacific.adapter.FragmentStatePagerAdapter2;
+import com.utouu.easyjoke.R;
+import com.utouu.easyjoke.RecommendFragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
  * Function：
  * Desc：
  */
-public class FirstPageFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     private final String[] mTitles3 = {"推荐", "视频", "段友秀", "图片", "段子", "精华", "同城", "游戏"};
 

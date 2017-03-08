@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.module.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,13 @@ import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.pacific.adapter.FragmentStatePagerAdapter2;
+import com.utouu.easyjoke.R;
+import com.utouu.easyjoke.entity.main.TabEntity;
+import com.utouu.easyjoke.module.discover.DiscoverFragment;
+import com.utouu.easyjoke.module.home.HomeFragment;
+import com.utouu.easyjoke.module.message.MessageFragment;
+import com.utouu.easyjoke.module.refresh.RefreshFragment;
+import com.utouu.easyjoke.widgets.NoScrollViewPager;
 
 import java.util.ArrayList;
 
@@ -30,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_tab_home_pressed, R.drawable.ic_tab_discovery_pressed,
             R.drawable.ic_tab_fresh_pressed, R.drawable.ic_tab_msg_pressed};
 
-    @BindView(R.id.viewPager) NoScrollViewPager viewPager;
+    @BindView(R.id.viewPager)
+    NoScrollViewPager viewPager;
     @BindView(R.id.iv_head) ImageView ivHead;
     @BindView(R.id.iv_publish) ImageView ivPublish;
 
@@ -108,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
-        mFragments.add(new FirstPageFragment());
-        mFragments.add(new SecondPageFragment());
-        mFragments.add(new ThirdPageFragment());
-        mFragments.add(new FourthPageFragment());
+        mFragments.add(new HomeFragment());
+        mFragments.add(new DiscoverFragment());
+        mFragments.add(new RefreshFragment());
+        mFragments.add(new MessageFragment());
     }
 }

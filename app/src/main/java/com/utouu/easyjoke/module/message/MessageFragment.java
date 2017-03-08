@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.module.message;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.utouu.easyjoke.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -17,7 +19,7 @@ import butterknife.ButterKnife;
  * Function：
  * Desc：
  */
-public class FourthPageFragment extends Fragment {
+public class MessageFragment extends Fragment {
 
     @BindView(R.id.tv_indicate)
     TextView tvIndicate;

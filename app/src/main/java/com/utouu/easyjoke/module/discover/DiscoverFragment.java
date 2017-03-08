@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.module.discover;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.utouu.easyjoke.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -20,7 +22,7 @@ import butterknife.ButterKnife;
  * Function：
  * Desc：
  */
-public class SecondPageFragment extends Fragment {
+public class DiscoverFragment extends Fragment {
 
     @BindView(R.id.tv_indicate)
     TextView tvIndicate;

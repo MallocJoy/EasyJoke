@@ -10,7 +10,7 @@ import me.drakeet.library.PatchMode;
  * Function：
  * Desc：
  */
-public class BaseApplication extends Application {
+public class EasyApplication extends Application {
 
     @Override
     public void onCreate() {

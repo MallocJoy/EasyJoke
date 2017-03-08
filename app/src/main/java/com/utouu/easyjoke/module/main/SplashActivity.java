@@ -1,10 +1,12 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.module.main;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.utouu.easyjoke.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,4 +1,6 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.data.service;
+
+import com.utouu.easyjoke.entity.login.User;
 
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;

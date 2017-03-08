@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.entity.login;
 
 /**
  * Create by 黄思程 on 2016/12/19   13:36

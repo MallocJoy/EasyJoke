@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.entity.main;
 
 import com.flyco.tablayout.listener.CustomTabEntity;
 

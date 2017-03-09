@@ -1,4 +1,4 @@
-package com.utouu.easyjoke.entity;
+package com.utouu.easyjoke.entity.home;
 
 /**
  * Create by 黄思程 on 2016/12/16   15:47

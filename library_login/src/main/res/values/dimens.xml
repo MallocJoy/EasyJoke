@@ -1,0 +1,37 @@
+<resources>
+
+    <dimen name="base_item_10">10dp</dimen>
+
+    <dimen name="base_item_height">64dp</dimen>
+    <dimen name="base_item_margin">12dp</dimen>
+    <dimen name="base_button_height">44dp</dimen>
+    <dimen name="base_button_131">131dp</dimen>
+    <dimen name="base_button_160">160dp</dimen>
+    <dimen name="base_button_260">260dp</dimen>
+    <!--添加的代码-->
+    <dimen name="base_margin_05">0.5dp</dimen>
+    <dimen name="base_margin_7">7dp</dimen>
+    <dimen name="base_margin_10">10dp</dimen>
+    <dimen name="base_margin_11">11dp</dimen>
+    <dimen name="base_margin_13">13dp</dimen>
+    <dimen name="base_margin_14">14dp</dimen>
+    <dimen name="base_margin_15">15dp</dimen>
+    <dimen name="base_margin_20">20dp</dimen>
+    <dimen name="base_margin_25">25dp</dimen>
+    <dimen name="base_margin_30">30dp</dimen>
+    <dimen name="base_margin_42">42dp</dimen>
+    <dimen name="base_margin_46">46dp</dimen>
+    <dimen name="base_margin_52">52dp</dimen>
+    <dimen name="base_margin_70">70dp</dimen>
+    <dimen name="base_margin_90">90dp</dimen>
+    <dimen name="base_margin_100">100dp</dimen>
+    <dimen name="base_margin_148">148dp</dimen>
+    <dimen name="base_margin_190">190dp</dimen>
+
+
+    <!--textSize部分-->
+    <dimen name="base_textsize_10">10sp</dimen>
+    <dimen name="base_textsize_12">12sp</dimen>
+    <dimen name="base_textsize_14">14sp</dimen>
+
+</resources>

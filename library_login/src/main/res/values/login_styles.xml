@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="commons_theme" parent="Theme.AppCompat.Light"></style>
+
+    <style name="commons_editTextStyle1">
+        <item name="android:textColor">@color/commons_text_show_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHint">@color/commons_text_hint_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--文本框基本样式-->
+    <style name="commons_editTextStyle2" parent="commons_editTextStyle1">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="commons_editTextStyle3" parent="commons_editTextStyle2">
+        <item name="android:paddingLeft">@dimen/base_item_margin</item>
+        <item name="android:drawablePadding">@dimen/base_item_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/commons_text_show_color</item>
+    </style>
+
+    <style name="commons_editTextStyle4" parent="commons_editTextStyle1">
+        <item name="android:drawablePadding">@dimen/base_item_margin</item>
+        <item name="android:paddingLeft">@dimen/base_item_margin</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_item_height</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="commons_textStyle">
+        <item name="android:textColor">@color/colorTabSelectedColor</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="commons_baseDialog1" parent="@android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="commons_baseDialog2" parent="@android:style/Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:gravity">center</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--按钮基本样式-->
+    <style name="commons_buttonStyle1">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18.0sp</item>
+    </style>
+
+    <style name="commons_buttonStyle2" parent="commons_buttonStyle1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_button_height</item>
+        <item name="android:layout_marginLeft">@dimen/base_margin_42</item>
+        <item name="android:layout_marginRight">@dimen/base_margin_42</item>
+        <item name="android:layout_marginTop">60dp</item>
+        <item name="android:background">@drawable/button_selector1</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <!--访问网页进度条样式-->
+    <style name="commons_progressStyle1" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/web_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">2dp</item>
+        <item name="android:maxHeight">2dp</item>
+    </style>
+</resources>

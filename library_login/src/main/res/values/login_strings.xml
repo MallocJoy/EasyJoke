@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="commons_login">登录</string>
+    <string name="commons_register">注册</string>
+    <string name="commons_register_fast">手机快速注册</string>
+    <string name="commons_password_retrieve">找回密码</string>
+    <string name="commons_login_failure">登录失败, 请稍候重试&#8230;</string>
+    <string name="commons_account_exists_hint">如您已是UTOUU用户，请直接登录</string>
+    <string name="commons_sms_get">点击获取验证码</string>
+    <string name="commons_sms_retry">重新获取验证码</string>
+    <string name="commons_sms_send">获取短信验证码中...</string>
+    <string name="commons_sms_send_two">验证码已发送</string>
+    <string name="commons_ok_hint1">确定</string>
+    <string name="commons_ok_hint2">确认</string>
+    <string name="commons_prompt1">提示</string>
+    <string name="commons_prompt2">温馨提示</string>
+
+    <string name="commons_account_hint1">请输入帐号</string>
+    <string name="commons_account_hint2">请输入你的手机号</string>
+    <string name="commons_password_hint1">请输入密码</string>
+    <string name="commons_password_hint2">请输入6-18位密码</string>
+    <string name="commons_password_hint3">请再次输入密码</string>
+    <string name="commons_cipher_hint">请输入暗号(选填)</string>
+    <string name="commons_verify_hint">请输入图片验证码</string>
+    <string name="commons_sms_code_hint">请输入短信验证码</string>
+    <string name="commons_next_hint">下一步</string>
+    <string name="commons_bind">绑定</string>
+
+    <string name="commons_countdown_hint">%1$s秒</string>
+
+    <string name="commons_account_validate1">请输入手机号码！</string>
+    <string name="commons_account_validate2">请输入正确的手机号码！</string>
+    <string name="commons_account_validate3">请输入帐号！</string>
+    <string name="commons_password_validate1">请输入密码！</string>
+    <string name="commons_password_validate2">密码长度为6~18位且不能有汉字或空格！</string>
+    <string name="commons_password_validate3">请再次输入密码！</string>
+    <string name="commons_password_validate4">两次输入密码不一致，请重新输入！</string>
+    <string name="commons_verify_validate">请输入验证码！</string>
+    <string name="commons_sms_validate">请输入短信验证码！</string>
+    <string name="commons_imei_validate">无法识别手机身份, 请不要禁用读取IMEI码权限！</string>
+    <string name="commons_device_validate">请使用真实设备！</string>
+
+    <string name="commons_register_agreement1">野草服务协议</string>
+    <string name="commons_register_agreement2"><![CDATA[轻触上面的“注册”按钮，即表示你同意<br/><font color="#4C9BFF">《野草服务协议》</font>]]></string>
+    <string name="commons_register_agreement3"><![CDATA[尊敬的有糖用户，您好！<br/><font color=\"#4C9BFF\">《有糖用户服务协议》</font>现已作出修改，请确认！]]></string>
+    <string name="commons_agreement_ok">同意修改条款并继续使用</string>
+
+    <string name="commons_title_changeDevices">更换设备</string>
+    <string name="commons_title_accountbind">手机绑定</string>
+    <string name="commons_title_register">手机快速注册</string>
+    <string name="commons_title_retrieve">找回密码</string>
+
+    <!--添加-->
+    <string name="commons_tips_utouu">UTOUU用户可直接登录</string>
+    <string name="pay_failure">支付失败</string>
+</resources>

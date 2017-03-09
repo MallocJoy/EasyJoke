@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commons_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_titlebar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_margin_05"
+        android:layout_marginTop="@dimen/base_margin_10"
+        android:background="@drawable/divider_line_height"></View>
+
+    <EditText
+        android:id="@+id/mobile_editText"
+        style="@style/commons_editTextStyle4"
+        android:drawableLeft="@mipmap/icon_mobile"
+        android:hint="@string/commons_account_hint2"
+        android:inputType="number"
+        android:maxLength="11"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_margin_05"
+        android:background="@drawable/divider_line_height"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_item_height"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/password_editText"
+            style="@style/commons_editTextStyle3"
+            android:drawableLeft="@mipmap/icon_password"
+            android:hint="@string/commons_password_hint2"
+            android:inputType="textPassword"
+            android:maxLength="18"/>
+
+        <ImageView
+            android:id="@+id/show_password_imageView"
+            android:layout_width="@dimen/base_item_height"
+            android:layout_height="@dimen/base_item_height"
+            android:layout_gravity="center_vertical"
+            android:scaleType="center"
+            android:src="@mipmap/icon_show_pass_normal"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_margin_05"
+        android:background="@drawable/divider_line_height"></View>
+
+    <Button
+        android:id="@+id/bind_account_customButton"
+        style="@style/commons_buttonStyle2"
+        android:text="@string/commons_bind"/>
+</LinearLayout>

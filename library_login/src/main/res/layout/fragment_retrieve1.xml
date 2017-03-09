@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:background="@android:color/white"
+        android:divider="@drawable/divider_line_height"
+        android:orientation="vertical"
+        android:showDividers="middle|end">
+
+        <EditText
+            android:id="@+id/mobile_editText"
+            style="@style/commons_editTextStyle4"
+            android:drawableLeft="@mipmap/icon_mobile"
+            android:hint="@string/commons_account_hint2"
+            android:inputType="number"
+            android:maxLength="11" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_item_height"
+            android:divider="@drawable/divider_line_width"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <EditText
+                android:id="@+id/verify_editText"
+                style="@style/commons_editTextStyle3"
+                android:drawableLeft="@mipmap/icon_verify"
+                android:hint="@string/commons_verify_hint"
+                android:inputType="textEmailAddress"
+                android:maxLength="6" />
+
+            <ImageView
+                android:id="@+id/verify_imageView"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/default_img_vify" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_button"
+        style="@style/commons_buttonStyle2"
+        android:layout_marginLeft="@dimen/base_margin_42"
+        android:layout_marginRight="@dimen/base_margin_42"
+        android:layout_marginTop="60dp"
+        android:text="@string/commons_next_hint" />
+
+</LinearLayout>

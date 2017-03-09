@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@drawable/divider_line_height"/>
+
+    <LinearLayout
+        android:layout_marginTop="188dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_item_height"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/mobile_verify_editText"
+            style="@style/commons_editTextStyle3"
+            android:drawableLeft="@mipmap/icon_mobile"
+            android:hint="@string/commons_sms_code_hint"
+            android:maxLength="8"/>
+
+        <TextView
+            android:id="@+id/countdown_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:text="@string/commons_countdown_hint"
+            android:textColor="@color/commons_text_hint_color"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@drawable/divider_line_height"/>
+
+    <Button
+        android:id="@+id/next_button"
+        style="@style/commons_buttonStyle2"
+        android:layout_marginLeft="@dimen/base_margin_42"
+        android:layout_marginRight="@dimen/base_margin_42"
+        android:layout_marginTop="60dp"
+        android:text="@string/commons_next_hint"/>
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.utouu.easyjoke;
+package com.utouu.easyjoke.module.home.recomment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.utouu.easyjoke.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

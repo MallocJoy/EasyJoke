@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.pacific.adapter.FragmentStatePagerAdapter2;
 import com.utouu.easyjoke.R;
-import com.utouu.easyjoke.RecommendFragment;
+import com.utouu.easyjoke.module.home.recomment.RecommendFragment;
 
 import java.util.ArrayList;
 

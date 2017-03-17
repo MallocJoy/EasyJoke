@@ -6,8 +6,7 @@ import android.text.TextUtils;
 import android.util.TypedValue;
 
 import com.aries.ui.widget.alert.UIAlertView;
-
-import cn.utsoft.xunions.R;
+import com.utouu.easyjoke.R;
 
 
 /**

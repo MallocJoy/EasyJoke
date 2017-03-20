@@ -1,6 +1,7 @@
 package com.utouu.easyjoke;
 
 import android.app.Application;
+import android.content.Context;
 
 import me.drakeet.library.CrashWoodpecker;
 import me.drakeet.library.PatchMode;
@@ -12,9 +13,12 @@ import me.drakeet.library.PatchMode;
  */
 public class EasyApplication extends Application {
 
+    private static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = getAppContext();
 
         //内存泄漏检查初始化
         CrashWoodpecker.instance()
@@ -23,7 +27,11 @@ public class EasyApplication extends Application {
                 .setPatchDialogUrlToOpen("https://drakeet.me")
                 .setPassToOriginalDefaultHandler(true)
                 .flyTo(this);
-
-
     }
+
+    //全局获取ApplicationContext
+    public static Context getAppContext() {
+        return mContext;
+    }
+
 }

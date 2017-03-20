@@ -5,11 +5,10 @@ import android.os.Bundle;
 import com.marno.easyutilcode.ToastUtil;
 
 /**
- * Created by cj on 2017/2/8.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:49
+ * Function：
+ * Desc：基类MVP Activity
  */
-
 public abstract class BaseMVPActivity<V, T extends BasePresenter<V>> extends BaseActivity implements IBaseStatusView {
 
     protected T mPresenter;

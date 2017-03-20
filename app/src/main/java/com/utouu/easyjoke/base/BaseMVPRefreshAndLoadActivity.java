@@ -5,12 +5,12 @@ import android.os.Bundle;
 import com.marno.easyutilcode.ToastUtil;
 
 /**
- * Created by llh on 2017/2/15 14:49.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:54
+ * Function：
+ * Desc：带刷新和加载的MVP Activity
  */
-
-public abstract class BaseMVPRefreshAndLoadActivity<V, T extends BasePresenter<V>> extends BaseRefreshAndLoadActivity implements IBaseStatusView {
+public abstract class BaseMVPRefreshAndLoadActivity<V, T extends BasePresenter<V>> extends
+        BaseRefreshAndLoadActivity implements IBaseStatusView {
 
     protected T mPresenter;
 

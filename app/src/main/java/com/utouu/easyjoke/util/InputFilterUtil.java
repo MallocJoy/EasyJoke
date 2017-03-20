@@ -160,7 +160,6 @@ public class InputFilterUtil {
         InputFilter filter = new InputFilter() {
             @Override
             public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                LoggerUtil.d("start:" + start + ";end:" + end + ";dstart:" + dstart + ";dend:" + dend);
                 String textInput = source.toString();
                 String textSpanned = textView.getText().toString();
                 int lengthText = textSpanned.length();

@@ -1,10 +1,5 @@
 package com.utouu.easyjoke.base;
 
-/**
- * Created by cj on 2017/2/8.
- * Function:
- * Desc:每个页面的
- */
 
 public interface IBaseStatusView extends IBaseListener {
     void noNet();//没有网络的回调

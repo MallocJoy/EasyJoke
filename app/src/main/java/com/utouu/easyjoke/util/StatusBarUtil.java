@@ -12,9 +12,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Created: AriesHoo on 2017-02-16 14:38
- * Function: 状态栏工具
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:38
+ * Function：
+ * Desc：状态栏工具类
  */
 public class StatusBarUtil {
 

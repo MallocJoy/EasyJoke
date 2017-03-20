@@ -6,11 +6,10 @@ import android.view.View;
 import com.marno.easyutilcode.ToastUtil;
 
 /**
- * Created by llh on 2017/2/15 15:13.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:50
+ * Function：
+ * Desc：基类MVP Fragment
  */
-
 public abstract class BaseMVPFragment <V, T extends BasePresenter<V>> extends BaseFragment implements IBaseStatusView {
 
     protected T mPresenter;

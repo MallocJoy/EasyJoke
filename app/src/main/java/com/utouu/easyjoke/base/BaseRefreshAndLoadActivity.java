@@ -9,10 +9,8 @@ import android.view.inputmethod.InputMethodManager;
 import com.aries.ui.view.title.TitleBarView;
 import com.marno.easystatelibrary.EasyStatusView;
 import com.marno.rapidlib.module.activity.RapidRefreshLoadActivity;
+import com.utouu.easyjoke.util.StatusBarUtil;
 
-import cn.utsoft.xunions.R;
-import cn.utsoft.xunions.util.StatusBarUtil;
-import cn.utsoft.xunions.widgets.TgtInvalidDialog;
 import in.srain.cube.views.ptr.PtrClassicDefaultHeader;
 import in.srain.cube.views.ptr.PtrUIHandler;
 
@@ -55,7 +53,7 @@ public abstract class BaseRefreshAndLoadActivity extends RapidRefreshLoadActivit
     @Override
     protected void initView(Bundle bundle) {
 
-        //TintStatusBar.translucentStatusBar(this);
+      /*  //TintStatusBar.translucentStatusBar(this);
         View view = findViewById(android.R.id.content).getRootView();
         titleBar = (TitleBarView) view.findViewById(R.id.titleBar);
         if (titleBar != null) {
@@ -78,7 +76,7 @@ public abstract class BaseRefreshAndLoadActivity extends RapidRefreshLoadActivit
         };
         if (easyStatusView != null) {
             easyStatusView.setOnClickListener(mOnClickListener);
-        }
+        }*/
     }
 
     protected abstract void _initView(Bundle bundle);
@@ -113,23 +111,6 @@ public abstract class BaseRefreshAndLoadActivity extends RapidRefreshLoadActivit
         InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (!manager.isActive()) {
             manager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-        }
-    }
-
-    /**
-     * 请求后令牌失效时调用的方法
-     *
-     * @param message
-     */
-    protected void tgtInvalid(String message) {
-
-        if (dialog != null) {
-            dialog = new TgtInvalidDialog(this).create();
-        }
-
-        if (dialog != null && !dialog.isShowing()) {
-            dialog.setMessage(message);
-            dialog.show();
         }
     }
 }

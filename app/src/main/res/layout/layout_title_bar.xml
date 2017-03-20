@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aries.ui.view.title.TitleBarView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/titleBar"
+    android:background="@color/er_color_white"
+    app:title_leftTextColor="@color/er_color_black"
+    app:title_leftTextDrawable="@drawable/ic_action_back"
+    app:title_titleMainText="@string/app_name"
+    app:title_titleMainTextSize="15dp"
+    app:title_titleMainTextColor="@color/er_color_black">
+
+</com.aries.ui.view.title.TitleBarView>

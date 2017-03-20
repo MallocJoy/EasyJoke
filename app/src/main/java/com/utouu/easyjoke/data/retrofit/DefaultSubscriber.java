@@ -5,17 +5,15 @@ import android.accounts.NetworkErrorException;
 import com.google.gson.JsonSyntaxException;
 import com.marno.easyutilcode.ToastUtil;
 import com.marno.rapidlib.manager.MLog;
+import com.utouu.easyjoke.data.exception.AccountsException;
 
 import java.net.ConnectException;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-import cn.utsoft.xunions.data.exception.AccountsException;
 import retrofit2.adapter.rxjava.HttpException;
 
-/**
- * Created by marno on 2016/7/9/14:45.
- */
+
 public abstract class DefaultSubscriber<T> extends rx.Subscriber<T> {
 
     @Override

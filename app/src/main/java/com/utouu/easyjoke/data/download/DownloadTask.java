@@ -4,14 +4,14 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
+import com.utouu.easyjoke.util.FileUtils;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import cn.utsoft.xunions.util.FileUtils;
 
 /**
  * Created by 李波 on 2017/3/7.

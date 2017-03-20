@@ -1,21 +1,13 @@
 package com.utouu.easyjoke.base;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 
 import com.aries.ui.view.title.TitleBarView;
 import com.aries.ui.widget.alert.UIAlertView;
 import com.marno.easystatelibrary.EasyStatusView;
-import com.marno.easyutilcode.StackUtil;
 import com.marno.rapidlib.module.fragment.RapidRefreshLoadFragment;
-import com.utouu.android.commons.constants.DataConstant;
-
-import cn.utsoft.xunions.R;
-import cn.utsoft.xunions.data.http.XunionsAsyncHttpUtils;
-import cn.utsoft.xunions.util.AlertUtil;
-import cn.utsoft.xunions.util.AppUtil;
-
+import com.utouu.easyjoke.R;
 
 /**
  * Created by cj on 2017/2/10.
@@ -72,25 +64,6 @@ public abstract class BaseRefreshLoadFragment extends RapidRefreshLoadFragment {
             @Override
             public void onClick(View v) {
                 getActivity().onBackPressed();
-            }
-        });
-    }
-
-    /**
-     * 请求后令牌失效时调用的方法
-     *
-     * @param message
-     */
-    protected void tgtInvalid(String message) {
-
-        dialog = AlertUtil.show(mContext, message,"确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialog.dismiss();
-                XunionsAsyncHttpUtils.clearST();
-                DataConstant.saveLocalTGT(mContext, "");
-                StackUtil.getIns().popAll();
-                AppUtil.startLoginActivity(mContext);
             }
         });
     }

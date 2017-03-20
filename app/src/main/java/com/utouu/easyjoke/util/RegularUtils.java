@@ -1,25 +1,23 @@
 package com.utouu.easyjoke.util;
 
-
-import com.utouu.android.commons.utils.StringUtils;
+import android.text.TextUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static cn.utsoft.xunions.util.ConstUtils.*;
-import static cn.utsoft.xunions.util.ConstUtils.IS_NUMBER;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_CHZ;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_DATE;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_EMAIL;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_IDCARD15;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_IDCARD18;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_IP;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_MOBILE_EXACT;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_MOBILE_SIMPLE;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_TEL;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_TESHU;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_URL;
-import static cn.utsoft.xunions.util.ConstUtils.REGEX_USERNAME;
+import static com.utouu.easyjoke.util.ConstUtils.IS_NUMBER;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_CHZ;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_DATE;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_EMAIL;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_IDCARD15;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_IDCARD18;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_IP;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_MOBILE_EXACT;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_MOBILE_SIMPLE;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_TEL;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_TESHU;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_URL;
+import static com.utouu.easyjoke.util.ConstUtils.REGEX_USERNAME;
 
 
 /**
@@ -189,7 +187,7 @@ public class RegularUtils {
      * @return {@code true}: 匹配<br>{@code false}: 不匹配
      */
     public static boolean isMatch(String regex, String string) {
-        return !StringUtils.isEmpty(string) && Pattern.matches(regex, string);
+        return !TextUtils.isEmpty(string) && Pattern.matches(regex, string);
     }
 
 

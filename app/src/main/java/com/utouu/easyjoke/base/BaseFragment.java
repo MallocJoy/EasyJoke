@@ -10,18 +10,16 @@ import com.aries.ui.view.title.TitleBarView;
 import com.marno.easystatelibrary.EasyStatusView;
 import com.marno.rapidlib.basic.BasicFragment;
 import com.marno.rapidlib.enums.RxLifeEvent;
+import com.utouu.easyjoke.R;
 
-import org.simple.eventbus.EventBus;
 
-import cn.utsoft.xunions.R;
 import rx.Observable;
 
 /**
- * Created by cj on 2017/2/7.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:41
+ * Function：
+ * Desc：基类Activity
  */
-
 public abstract class BaseFragment extends BasicFragment {
     protected EasyStatusView easyStatusView;
     private View.OnClickListener mOnClickListener;
@@ -34,9 +32,6 @@ public abstract class BaseFragment extends BasicFragment {
 
     @Override
     protected void initView(View view, Bundle bundle) {
-
-        EventBus.getDefault().register(this);
-
         titleBar = (TitleBarView) view.findViewById(R.id.titleBar);
 
         if (titleBar != null) {
@@ -85,7 +80,6 @@ public abstract class BaseFragment extends BasicFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
 

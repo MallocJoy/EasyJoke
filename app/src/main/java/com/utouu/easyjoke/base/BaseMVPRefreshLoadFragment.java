@@ -6,12 +6,12 @@ import android.view.View;
 import com.marno.easyutilcode.ToastUtil;
 
 /**
- * Created by llh on 2017/2/15 15:22.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:54
+ * Function：
+ * Desc：带刷新和加载的MVP Fragment
  */
-
-public abstract class BaseMVPRefreshLoadFragment<V, T extends BasePresenter<V>> extends BaseRefreshLoadFragment implements IBaseStatusView {
+public abstract class BaseMVPRefreshLoadFragment<V, T extends BasePresenter<V>> extends
+        BaseRefreshLoadFragment implements IBaseStatusView {
 
     protected T mPresenter;
 

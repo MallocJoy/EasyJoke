@@ -18,16 +18,9 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+import com.utouu.easyjoke.R;
 
 import java.io.File;
-
-import cn.utsoft.xunions.R;
-
-/**
- * Created by cj on 2017/2/15.
- * Function:
- * Desc:
- */
 
 public class GlideManager {
 
@@ -37,9 +30,9 @@ public class GlideManager {
 
 
     static {
-        sCommonPlaceholder = R.drawable.ic_placeholder;
-        sCirclePlaceholder = R.drawable.ic_place_holder_circle_120_120;
-        sRoundPlaceholder = R.drawable.ic_placeholder;
+        sCommonPlaceholder = R.drawable.holder;
+        sCirclePlaceholder = R.drawable.holder;
+        sRoundPlaceholder = R.drawable.holder;
     }
 
     public GlideManager() {

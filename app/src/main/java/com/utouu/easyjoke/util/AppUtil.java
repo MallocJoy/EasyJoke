@@ -13,16 +13,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.utouu.android.commons.utils.DeviceUtils;
-import com.utouu.android.commons.utils.PreferenceUtils;
-import com.utouu.android.commons.utils.StringUtils;
-import com.utouu.android.commons.utils.ToastUtils;
-import com.utouu.module.login.ui.BaseLoginActivity;
+import com.utouu.easyjoke.BuildConfig;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,13 +28,6 @@ import java.io.InputStreamReader;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-import cn.utsoft.xunions.BuildConfig;
-import cn.utsoft.xunions.module.login.LoginActivity;
-
-
-/**
- * Created by Administrator on 2016/6/20.
- */
 public class AppUtil {
 
     /**
@@ -153,7 +143,7 @@ public class AppUtil {
      * @return
      */
     public static boolean validateDevices(Context context) {
-        String imei = DeviceUtils.getIMEI(context);
+        /*String imei = DeviceUtils.getIMEI(context);
         if (StringUtils.isBlank(imei)) {
             ToastUtils.showShortToast(context, "无法识别手机身份, 请不要禁用读取IMEI码权限！");
             return false;
@@ -161,7 +151,7 @@ public class AppUtil {
         if (DeviceUtils.checkIMEISame(imei) || DeviceUtils.checkVirtualDevice()) {
             ToastUtils.showShortToast(context, "请使用真实设备！");
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -226,7 +216,7 @@ public class AppUtil {
         int nType = networkInfo.getType();
         if (nType == ConnectivityManager.TYPE_MOBILE) {
             String extraInfo = networkInfo.getExtraInfo();
-            if(!StringUtils.isEmpty(extraInfo)){
+            if(!TextUtils.isEmpty(extraInfo)){
                 if (extraInfo.toLowerCase().equals("cmnet")) {
                     netType = NETTYPE_CMNET;
                 } else {
@@ -270,10 +260,10 @@ public class AppUtil {
     }
 
 
-    public static void startLoginActivity(Context context) {
+    /*public static void startLoginActivity(Context context) {
         BaseLoginActivity.start(context,LoginActivity.class, BuildConfig.XUNIONS_TYPE,"DEFAULT_UDID","DEFAULT_TOKEN","XUNIONS", BuildConfig.VERSION_NAME,true,2);
 //        BaseLoginActivity.start(context,LoginActivity.class,BuildConfig.XUNIONS_TYPE,"DEFAULT_UDID","DEFAULT_TOKEN","XUNIONS", BuildConfig.VERSION_NAME,false);
-    }
+    }*/
 
     public static String getWindowWidth(Activity activity) {
 
@@ -357,7 +347,7 @@ public class AppUtil {
      * @param context
      */
     public static void clearSharedPreferences(Context context) {
-        PreferenceUtils.clear(context);
+        /*PreferenceUtils.clear(context);*/
     }
 
     /**

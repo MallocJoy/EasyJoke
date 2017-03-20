@@ -1,15 +1,13 @@
 package com.utouu.easyjoke.base;
 
 import com.chad.library.adapter.base.loadmore.LoadMoreView;
-
-import cn.utsoft.xunions.R;
+import com.utouu.easyjoke.R;
 
 /**
- * Created by cj on 2017/2/10.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:45
+ * Function：
+ * Desc：点击加载更多视图
  */
-
 public class BaseLoadMoreView extends LoadMoreView {
     @Override
     public int getLayoutId() {

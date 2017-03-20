@@ -3,11 +3,10 @@ package com.utouu.easyjoke.base;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Marno on 2016/11/3/16:26
+ * Create by 黄思程 on 2017/3/20  10:07
  * Function：
- * Desc：
+ * Desc：基类Presenter
  */
-
 public class BasePresenter<T> {
     protected WeakReference<T> mView;
 

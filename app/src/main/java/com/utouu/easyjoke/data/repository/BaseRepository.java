@@ -5,9 +5,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
-
-import cn.utsoft.xunions.data.exception.DefaultErrorException;
-import cn.utsoft.xunions.entity.BaseEntity;
+import com.utouu.easyjoke.data.exception.DefaultErrorException;
+import com.utouu.easyjoke.entity.BaseEntity;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

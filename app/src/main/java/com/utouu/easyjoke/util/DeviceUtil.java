@@ -3,12 +3,6 @@ package com.utouu.easyjoke.util;
 import android.app.Activity;
 import android.util.DisplayMetrics;
 
-/**
- * Created by cj on 2017/2/13.
- * Function:
- * Desc:设备相关的工具类
- */
-
 public class DeviceUtil {
 
     /**

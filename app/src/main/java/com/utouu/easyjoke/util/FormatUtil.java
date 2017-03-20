@@ -5,8 +5,6 @@ import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
 import android.widget.TextView;
 
-import static android.R.attr.format;
-
 /**
  * Created: AriesHoo on 2017-02-19 10:29
  * Function: 格式化工具类--TextView改变部分字体大小,String 格式化输出
@@ -28,7 +26,6 @@ public class FormatUtil {
      * @return
      */
     public static String formatCommaString(Object o, boolean isWrap, boolean isDot) {
-        LoggerUtil.e("format:" + format);
         if (!(o instanceof Double) && !(o instanceof Float) && !(o instanceof Integer) && !(o instanceof Long)) {
             return o != null ? o.toString() : "";
         }

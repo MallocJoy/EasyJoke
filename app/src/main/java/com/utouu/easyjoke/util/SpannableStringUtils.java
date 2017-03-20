@@ -32,8 +32,8 @@ import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 
-import cn.utsoft.xunions.XUnionsApplication;
-import cn.utsoft.xunions.widgets.StickerSpan;
+import com.utouu.easyjoke.EasyApplication;
+import com.utouu.easyjoke.widgets.StickerSpan;
 
 import static android.graphics.BlurMaskFilter.Blur;
 
@@ -539,7 +539,7 @@ public class SpannableStringUtils {
             }
             if (imageIsBitmap || imageIsDrawable || imageIsUri || imageIsResourceId) {
                 if (imageIsBitmap) {
-                    mBuilder.setSpan(new ImageSpan(XUnionsApplication.getAppContext(), bitmap), start, end, flag);
+                    mBuilder.setSpan(new ImageSpan(EasyApplication.getAppContext(), bitmap), start, end, flag);
                     bitmap = null;
                     imageIsBitmap = false;
                 } else if (imageIsDrawable) {
@@ -548,12 +548,12 @@ public class SpannableStringUtils {
                     drawable = null;
                     imageIsDrawable = false;
                 } else if (imageIsUri) {
-                    mBuilder.setSpan(new ImageSpan(XUnionsApplication.getAppContext(), uri), start, end, flag);
+                    mBuilder.setSpan(new ImageSpan(EasyApplication.getAppContext(), uri), start, end, flag);
                     uri = null;
                     imageIsUri = false;
                 } else {
                     //设置图片
-                    Drawable drawable = XUnionsApplication.getAppContext().getResources().getDrawable(resourceId);
+                    Drawable drawable = EasyApplication.getAppContext().getResources().getDrawable(resourceId);
                     drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
                     mBuilder.setSpan(new StickerSpan(drawable, ImageSpan.ALIGN_BOTTOM, imgXoffset, imgYoffset), start, end, flag);
                     resourceId = 0;

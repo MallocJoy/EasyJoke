@@ -1,7 +1,6 @@
 package com.utouu.easyjoke.base;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -9,23 +8,14 @@ import android.view.inputmethod.InputMethodManager;
 import com.aries.ui.view.title.TitleBarView;
 import com.aries.ui.widget.alert.UIAlertView;
 import com.marno.easystatelibrary.EasyStatusView;
-import com.marno.easyutilcode.StackUtil;
 import com.marno.rapidlib.basic.BasicActivity;
-import com.utouu.android.commons.constants.DataConstant;
-
-import org.simple.eventbus.EventBus;
-
-import cn.utsoft.xunions.R;
-import cn.utsoft.xunions.data.http.XunionsAsyncHttpUtils;
-import cn.utsoft.xunions.util.AlertUtil;
-import cn.utsoft.xunions.util.AppUtil;
-import cn.utsoft.xunions.util.StatusBarUtil;
+import com.utouu.easyjoke.util.StatusBarUtil;
 
 
 /**
- * Created by cj on 2017/2/7.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  9:37
+ * Function：
+ * Desc：基类Activity
  */
 
 public abstract class BaseActivity extends BasicActivity {
@@ -46,7 +36,7 @@ public abstract class BaseActivity extends BasicActivity {
     protected void initView(Bundle bundle) {
         //TintStatusBar.translucentStatusBar(this);
         View view = findViewById(android.R.id.content).getRootView();
-        titleBar = (TitleBarView) view.findViewById(R.id.titleBar);
+       /* titleBar = (TitleBarView) view.findViewById(R.id.titleBar);*/
         if (titleBar != null) {
             if (type > 0) {
                 titleBar.setImmersible(this, true);
@@ -100,14 +90,12 @@ public abstract class BaseActivity extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         type = StatusBarUtil.StatusBarDarkMode(this);
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         hideSoftInput();
-        EventBus.getDefault().unregister(this);
     }
 
     /**
@@ -120,23 +108,5 @@ public abstract class BaseActivity extends BasicActivity {
             view.requestFocus();
             inputManger.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-    }
-
-    /**
-     * 请求后令牌失效时调用的方法
-     *
-     * @param message
-     */
-    public void tgtInvalid(String message) {
-
-        dialog = AlertUtil.show(mContext, message, "确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                XunionsAsyncHttpUtils.clearST();
-                DataConstant.saveLocalTGT(mContext, "");
-                StackUtil.getIns().popAll();
-                AppUtil.startLoginActivity(mContext);
-            }
-        });
     }
 }

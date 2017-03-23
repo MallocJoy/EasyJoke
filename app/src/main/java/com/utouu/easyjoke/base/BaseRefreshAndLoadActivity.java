@@ -2,13 +2,15 @@ package com.utouu.easyjoke.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.RelativeLayout;
 
-import com.aries.ui.view.title.TitleBarView;
+import com.allen.library.SuperTextView;
+import com.flyco.tablayout.SegmentTabLayout;
 import com.marno.easystatelibrary.EasyStatusView;
 import com.marno.rapidlib.module.activity.RapidRefreshLoadActivity;
+import com.utouu.easyjoke.R;
 import com.utouu.easyjoke.util.StatusBarUtil;
 
 import in.srain.cube.views.ptr.PtrClassicDefaultHeader;
@@ -20,13 +22,10 @@ import in.srain.cube.views.ptr.PtrUIHandler;
  * Desc:
  */
 public abstract class BaseRefreshAndLoadActivity extends RapidRefreshLoadActivity {
-
     protected EasyStatusView easyStatusView;
     private View.OnClickListener mOnClickListener;
-
-    private AlertDialog dialog;//令牌失效时候弹出的对话框
-
-    TitleBarView titleBar;//标题栏
+    SuperTextView titleText;
+    SegmentTabLayout titleSegment;
     int type = 0;
 
     //维护页面状态
@@ -53,35 +52,31 @@ public abstract class BaseRefreshAndLoadActivity extends RapidRefreshLoadActivit
     @Override
     protected void initView(Bundle bundle) {
 
-      /*  //TintStatusBar.translucentStatusBar(this);
+        //TintStatusBar.translucentStatusBar(this);
         View view = findViewById(android.R.id.content).getRootView();
-        titleBar = (TitleBarView) view.findViewById(R.id.titleBar);
+        RelativeLayout titleBar = (RelativeLayout) view.findViewById(R.id.titleBar);
+        titleText = (SuperTextView) view.findViewById(R.id.titleText);
+        titleSegment = (SegmentTabLayout) view.findViewById(R.id.titleSegment);
+
         if (titleBar != null) {
             initTitleBar();
-            setTitleBar(titleBar);
-            if (type > 0) {
-                titleBar.setImmersible(this, true);
-                type = StatusBarUtil.StatusBarLightMode(this);
-            }
+            setTitleBar(titleText,titleSegment);
         }
         _initView(bundle);
-        mOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (easyStatusView != null) {
-                    easyStatusView.loading();
-                    BaseRefreshAndLoadActivity.this.loadData();
-                }
+        mOnClickListener = v -> {
+            if (easyStatusView != null) {
+                easyStatusView.loading();
+                BaseRefreshAndLoadActivity.this.loadData();
             }
         };
         if (easyStatusView != null) {
             easyStatusView.setOnClickListener(mOnClickListener);
-        }*/
+        }
     }
 
     protected abstract void _initView(Bundle bundle);
 
-    protected void setTitleBar(TitleBarView titleBar) {
+    protected void setTitleBar(SuperTextView titleText,SegmentTabLayout titleSegment) {
 
     }
 
@@ -89,13 +84,8 @@ public abstract class BaseRefreshAndLoadActivity extends RapidRefreshLoadActivit
     /**
      * 对titlebar进行一些基本设置，如需其他设置实现setTitleBar方法即可
      */
-    private void initTitleBar() {
-        titleBar.setOnLeftTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+    protected void initTitleBar() {
+
     }
 
     @Override

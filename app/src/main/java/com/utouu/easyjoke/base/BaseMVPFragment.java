@@ -10,7 +10,8 @@ import com.marno.easyutilcode.ToastUtil;
  * Function：
  * Desc：基类MVP Fragment
  */
-public abstract class BaseMVPFragment <V, T extends BasePresenter<V>> extends BaseFragment implements IBaseStatusView {
+public abstract class BaseMVPFragment <V, T extends BasePresenter<V>> extends
+        BaseFragment implements IBaseStatusView {
 
     protected T mPresenter;
 

@@ -4,27 +4,27 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.RelativeLayout;
 
-import com.aries.ui.view.title.TitleBarView;
-import com.aries.ui.widget.alert.UIAlertView;
+import com.allen.library.SuperTextView;
+import com.flyco.tablayout.SegmentTabLayout;
 import com.marno.easystatelibrary.EasyStatusView;
 import com.marno.rapidlib.basic.BasicActivity;
+import com.utouu.easyjoke.R;
 import com.utouu.easyjoke.util.StatusBarUtil;
-
 
 /**
  * Create by 黄思程 on 2017/3/20  9:37
  * Function：
  * Desc：基类Activity
  */
-
 public abstract class BaseActivity extends BasicActivity {
     protected EasyStatusView easyStatusView;
     private View.OnClickListener mOnClickListener;
+    protected SuperTextView titleText;
+    protected SegmentTabLayout titleSegment;
 
-    TitleBarView titleBar;//标题栏
     int type = 0;
-    private UIAlertView dialog;
 
     //维护页面状态
     protected void setEasyStatusView(EasyStatusView easyStatusView) {
@@ -36,30 +36,24 @@ public abstract class BaseActivity extends BasicActivity {
     protected void initView(Bundle bundle) {
         //TintStatusBar.translucentStatusBar(this);
         View view = findViewById(android.R.id.content).getRootView();
-       /* titleBar = (TitleBarView) view.findViewById(R.id.titleBar);*/
+        RelativeLayout titleBar = (RelativeLayout) view.findViewById(R.id.titleBar);
+        titleText = (SuperTextView) view.findViewById(R.id.titleText);
+        titleSegment = (SegmentTabLayout) view.findViewById(R.id.titleSegment);
         if (titleBar != null) {
-            if (type > 0) {
-                titleBar.setImmersible(this, true);
-                StatusBarUtil.StatusBarLightMode(this);
-            }
             initTitleBar();
-            setTitleBar(titleBar);
+            setTitleBar(titleText,titleSegment);
         }
 
         _initView(bundle);
 
-        mOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (easyStatusView != null ) {
-                    easyStatusView.loading();
-                    BaseActivity.this.loadData();
-                }
+        mOnClickListener = v -> {
+            if (easyStatusView != null) {
+                easyStatusView.loading();
+                BaseActivity.this.loadData();
             }
         };
 
         if (easyStatusView != null) {
-//            easyStatusView.setOnClickListener(mOnClickListener);
             easyStatusView.getEmptyView().setOnClickListener(mOnClickListener);
             easyStatusView.getErrorView().setOnClickListener(mOnClickListener);
             easyStatusView.getNoNetworkView().setOnClickListener(mOnClickListener);
@@ -69,21 +63,15 @@ public abstract class BaseActivity extends BasicActivity {
     protected abstract void _initView(Bundle bundle);
 
 
-    protected void setTitleBar(TitleBarView titleBar) {
+    protected void setTitleBar(SuperTextView titleText,SegmentTabLayout titleSegment) {
 
     }
 
     /**
      * 对titlebar进行一些基本设置，如需其他设置实现setTitleBar方法即可
      */
-    private void initTitleBar() {
-        titleBar.setOnLeftTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        //titleBar 白底黑字使用一下代码
+    protected void initTitleBar() {
+
     }
 
     @Override

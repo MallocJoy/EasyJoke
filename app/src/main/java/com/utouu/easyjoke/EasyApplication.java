@@ -3,6 +3,8 @@ package com.utouu.easyjoke;
 import android.app.Application;
 import android.content.Context;
 
+import com.orhanobut.logger.Logger;
+
 import me.drakeet.library.CrashWoodpecker;
 import me.drakeet.library.PatchMode;
 
@@ -27,6 +29,9 @@ public class EasyApplication extends Application {
                 .setPatchDialogUrlToOpen("https://drakeet.me")
                 .setPassToOriginalDefaultHandler(true)
                 .flyTo(this);
+
+        //初始化Logger
+        Logger.init(">>>");
     }
 
     //全局获取ApplicationContext

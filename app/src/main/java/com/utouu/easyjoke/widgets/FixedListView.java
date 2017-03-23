@@ -5,8 +5,9 @@ import android.util.AttributeSet;
 import android.widget.ListView;
 
 /**
- * Created by marno on 2016/3/22/14:58.
- * 可适应ScrollView的ListView
+ * Create by 黄思程 on 2017/3/20  15:39
+ * Function：
+ * Desc：可适应ScrollView的ListView
  */
 public class FixedListView extends ListView {
 

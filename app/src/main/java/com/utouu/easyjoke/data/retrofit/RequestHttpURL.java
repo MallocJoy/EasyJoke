@@ -7,6 +7,14 @@ package com.utouu.easyjoke.data.retrofit;
  */
 public class RequestHttpURL {
 
-    public static final String BASE_URL = "";
+    /**
+     * BaseUrl
+     */
+    public static final String BASE_URL = "http://ic.snssdk.com/";
+
+    /**
+     * 获取主页面数据的URL
+     */
+    public static final String GET_MAIN_PAGE_INFO = "neihan/service/tabs/";
 
 }

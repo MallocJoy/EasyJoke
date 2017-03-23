@@ -2,9 +2,10 @@ package com.utouu.easyjoke.base;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 
-import com.aries.ui.view.title.TitleBarView;
-import com.aries.ui.widget.alert.UIAlertView;
+import com.allen.library.SuperTextView;
+import com.flyco.tablayout.SegmentTabLayout;
 import com.marno.easystatelibrary.EasyStatusView;
 import com.marno.rapidlib.module.fragment.RapidRefreshLoadFragment;
 import com.utouu.easyjoke.R;
@@ -18,8 +19,8 @@ import com.utouu.easyjoke.R;
 public abstract class BaseRefreshLoadFragment extends RapidRefreshLoadFragment {
     protected EasyStatusView easyStatusView;
     private View.OnClickListener mOnClickListener;
-    private TitleBarView titleBar;
-    private UIAlertView dialog;
+    SuperTextView titleText;
+    SegmentTabLayout titleSegment;
 
     //维护页面状态
     protected void setEasyStatusView(EasyStatusView easyStatusView) {
@@ -28,12 +29,13 @@ public abstract class BaseRefreshLoadFragment extends RapidRefreshLoadFragment {
 
     @Override
     protected void initView(View view, Bundle bundle) {
-
-        titleBar = (TitleBarView) view.findViewById(R.id.titleBar);
+        RelativeLayout titleBar = (RelativeLayout) view.findViewById(R.id.titleBar);
+        titleText = (SuperTextView) view.findViewById(R.id.titleText);
+        titleSegment = (SegmentTabLayout) view.findViewById(R.id.titleSegment);
 
         if (titleBar != null) {
             initTitleBar();
-            setTitleBar(titleBar);
+            setTitleBar(titleText,titleSegment);
         }
         _initView(view,bundle);
 
@@ -55,16 +57,10 @@ public abstract class BaseRefreshLoadFragment extends RapidRefreshLoadFragment {
 
     protected abstract void _initView(View view, Bundle bundle);
 
-    protected void setTitleBar(TitleBarView titleBar) {
+    protected void setTitleBar(SuperTextView titleText,SegmentTabLayout titleSegment) {
 
     }
 
-    private void initTitleBar() {
-        titleBar.setOnLeftTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+    protected void initTitleBar() {
     }
 }

@@ -1,7 +1,9 @@
 package com.utouu.easyjoke.data.exception;
 
 /**
- * Created by AriesHoo on 2016-09-12 13:55
+ * Create by 黄思程 on 2017/3/20  16:59
+ * Function：
+ * Desc：自定义异常
  */
 public class DefaultErrorException extends Exception {
     public final String code;

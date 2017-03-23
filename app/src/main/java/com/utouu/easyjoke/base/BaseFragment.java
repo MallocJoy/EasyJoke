@@ -5,13 +5,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.RelativeLayout;
 
-import com.aries.ui.view.title.TitleBarView;
+import com.allen.library.SuperTextView;
+import com.flyco.tablayout.SegmentTabLayout;
 import com.marno.easystatelibrary.EasyStatusView;
 import com.marno.rapidlib.basic.BasicFragment;
 import com.marno.rapidlib.enums.RxLifeEvent;
 import com.utouu.easyjoke.R;
-
 
 import rx.Observable;
 
@@ -23,7 +24,9 @@ import rx.Observable;
 public abstract class BaseFragment extends BasicFragment {
     protected EasyStatusView easyStatusView;
     private View.OnClickListener mOnClickListener;
-    private TitleBarView titleBar;
+
+    protected SuperTextView titleText;
+    protected SegmentTabLayout titleSegment;
 
     //维护页面状态
     protected void setEasyStatusView(EasyStatusView easyStatusView) {
@@ -32,22 +35,20 @@ public abstract class BaseFragment extends BasicFragment {
 
     @Override
     protected void initView(View view, Bundle bundle) {
-        titleBar = (TitleBarView) view.findViewById(R.id.titleBar);
-
+        RelativeLayout titleBar = (RelativeLayout) view.findViewById(R.id.titleBar);
+        titleText = (SuperTextView) view.findViewById(R.id.titleText);
+        titleSegment = (SegmentTabLayout) view.findViewById(R.id.titleSegment);
         if (titleBar != null) {
             initTitleBar();
-            setTitleBar(titleBar);
+            setTitleBar(titleText,titleSegment);
         }
 
         Observable.Transformer<Object, Object>
                 objectObjectTransformer = bindUntilEvent(RxLifeEvent.DESTROY);
-        mOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (easyStatusView != null) {
-                    easyStatusView.loading();
-                    BaseFragment.this.loadData();
-                }
+        mOnClickListener = v -> {
+            if (easyStatusView != null) {
+                easyStatusView.loading();
+                BaseFragment.this.loadData();
             }
         };
 
@@ -64,17 +65,12 @@ public abstract class BaseFragment extends BasicFragment {
 
     protected abstract void _initView(View view, Bundle bundle);
 
-    protected void setTitleBar(TitleBarView titleBar) {
+    protected void setTitleBar(SuperTextView titleText,SegmentTabLayout titleSegment) {
 
     }
 
     private void initTitleBar() {
-        titleBar.setOnLeftTextClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+        //可重写此方法来对TitleBar做初始化处理
     }
 
     @Override

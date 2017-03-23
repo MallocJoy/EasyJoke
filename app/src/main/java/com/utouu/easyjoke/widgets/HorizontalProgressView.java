@@ -7,13 +7,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
-
 /**
- * Created by cj on 2017/2/13.
- * Function:
- * Desc:
+ * Create by 黄思程 on 2017/3/20  13:23
+ * Function：
+ * Desc：自定义带动画的水平进度条
  */
-
 public class HorizontalProgressView extends View {
     private String descText = "";
     private int height;

@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--标题栏布局-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/titleBar"
-    android:background="#DED9D1"
-    android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="42dp">
 
-    <ImageView
-        android:id="@+id/iv_head"
-        android:layout_gravity="start"
-        android:layout_width="50dp"
-        android:padding="3dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/default_round_head" />
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-
+    <com.allen.library.SuperTextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:sBackgroundColor="#ded9d1"
+        app:sCenterTextColor="@color/mainPage"
+        app:sCenterTextSize="@dimen/dp_19"
+        app:sLeftIconHeight="30dp"
+        app:sLeftIconRes="@drawable/default_round_head"
+        app:sLeftIconWidth="30dp"
+        app:sLeftTextColor="@color/mainPage"
+        app:sLeftTextSize="@dimen/dp_16"
+        app:sLineShow="none"
+        app:sRightIconHeight="25dp"
+        app:sRightIconRes="@drawable/ic_publish"
+        app:sRightIconWidth="25dp"
+        app:sRightTextColor="@color/mainPage"
+        app:sRightTextSize="@dimen/dp_16" />
 
     <com.flyco.tablayout.SegmentTabLayout
-        android:id="@+id/stLayout"
+        android:id="@+id/titleSegment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_6"
         app:tl_bar_color="#DED9D1"
         app:tl_indicator_color="#6D554A"
         app:tl_indicator_corner_radius="3dp"
         app:tl_tab_padding="20dp" />
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-
-    <ImageView
-        android:id="@+id/iv_publish"
-        android:layout_width="50dp"
-        android:padding="3dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/ic_publish" />
-</LinearLayout>
+</RelativeLayout>

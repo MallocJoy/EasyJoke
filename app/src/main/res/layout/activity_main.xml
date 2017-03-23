@@ -8,11 +8,7 @@
     android:orientation="vertical"
     tools:context="com.utouu.easyjoke.module.main.MainActivity">
 
-    <include
-        android:id="@+id/titleLayout"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        layout="@layout/layout_title"/>
+    <include layout="@layout/layout_title"/>
 
     <com.utouu.easyjoke.widgets.NoScrollViewPager
         android:id="@+id/viewPager"

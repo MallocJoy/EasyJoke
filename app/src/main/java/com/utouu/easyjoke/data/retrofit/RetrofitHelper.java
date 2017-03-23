@@ -1,40 +1,32 @@
 package com.utouu.easyjoke.data.retrofit;
 
-import com.orhanobut.logger.Logger;
-
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import okhttp3.Interceptor;
+
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
 /**
- * Created by marno on 2016/6/26/23:15.
- * retrofit封装
+ * Create by 黄思程 on 2017/3/20  14:08
+ * Function：
+ * Desc：Retrofit工具类
  */
 public class RetrofitHelper {
 
-    private static volatile Retrofit sRetrofit;
-    private static volatile RetrofitHelper sHelper;
+    private static Retrofit sRetrofit;
+    private static RetrofitHelper sHelper;
 
-    private RetrofitHelper() {
+    private  RetrofitHelper() {
 
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        Request request = chain.request();
-                        Response response = chain.proceed(request);
-                        String s = request.url().encodedPath();
-                        Logger.e(s);
-                        return response;
-                    }
-                })
+                /*.addInterceptor(chain -> {
+                    Request request = chain.request();
+                    Response response = chain.proceed(request);
+                    String s = request.url().encodedPath();
+                    Logger.e(s);
+                    return response;
+                })*/
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
@@ -49,7 +41,7 @@ public class RetrofitHelper {
                 .build();
     }
 
-    public static RetrofitHelper getIns() {
+    private static RetrofitHelper getIns() {
         if (sHelper == null) {
             synchronized (RetrofitHelper.class) {
                 if (sHelper == null) {
@@ -60,14 +52,7 @@ public class RetrofitHelper {
         return sHelper;
     }
 
-    protected static <T> T create(Class<T> apiService) {
+    public static <T> T create(Class<T> apiService) {
         return sHelper.getIns().sRetrofit.create(apiService);
     }
-
-    /**
-     * Function:获取用户信息
-     *//*
-    public IPersonalService USERINFOR() {
-        return create(IPersonalService.class);
-    }*/
 }

@@ -40,19 +40,10 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.TypedValue;
-
 /**
- * A Drawable object that draws text.
- * A TextDrawable accepts most of the same parameters that can be applied to
- * {@link android.widget.TextView} for displaying and formatting text.
- *
- * Optionally, a {@link Path} may be supplied on which to draw the text.
- *
- * A TextDrawable has an intrinsic size equal to that required to draw all
- * the text it has been supplied, when possible.  In cases where a {@link Path}
- * has been supplied, the caller must explicitly call
- * {@link #setBounds(Rect) setBounds()} to provide the Drawable
- * size based on the Path constraints.
+ * Create by 黄思程 on 2017/3/20  13:22
+ * Function：
+ * Desc：给TextView设置Drawable文件
  */
 public class TextDrawable extends Drawable {
 

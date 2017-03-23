@@ -3,9 +3,10 @@ package com.utouu.easyjoke.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 /**
- * Created by fan on 2016/6/23.
+ * Create by 黄思程 on 2017/3/20  13:26
+ * Function：
+ * Desc：时间工具类
  */
 public class TimeUtils {
 

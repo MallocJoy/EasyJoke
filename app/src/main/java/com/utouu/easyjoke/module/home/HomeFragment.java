@@ -70,6 +70,9 @@ public class HomeFragment extends Fragment {
         vpFirstPage.setCurrentItem(0);
     }
 
+    /**
+     * 添加Fragment页面
+     */
     private void initData() {
         mFragments.add(new RecommendFragment());
         mFragments.add(new RecommendFragment());

@@ -8,8 +8,11 @@ import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-
-
+/**
+ * Create by 黄思程 on 2017/3/20  13:24
+ * Function：
+ * Desc：圆形进度条
+ */
 public class CircleProgressView extends View {
 
     private int mMaxProgress = 100;

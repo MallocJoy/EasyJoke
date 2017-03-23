@@ -9,9 +9,9 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 
 /**
- * Created: AriesHoo on 2017-01-17 12:59
- * Function: 视图帮助类
- * Desc:
+ * Create by 黄思程 on 2017/3/20  13:21
+ * Function：
+ * Desc：视图帮助工具类
  */
 public class ViewUtil {
     private static volatile ViewUtil instance;

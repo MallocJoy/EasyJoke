@@ -8,6 +8,11 @@ import android.util.TypedValue;
 import com.aries.ui.widget.alert.UIAlertView;
 import com.utouu.easyjoke.R;
 
+/**
+ * Create by 黄思程 on 2017/3/20  17:02
+ * Function：
+ * Desc：对话框工具类
+ */
 public class AlertUtil {
 
 

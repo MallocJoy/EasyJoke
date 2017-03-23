@@ -14,9 +14,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by 李波 on 2017/3/7.
- * Function: 下载
- * Desc:
+ * Create by 黄思程 on 2017/3/20  16:58
+ * Function：
+ * Desc：下载工具类
  */
 public class DownloadTask extends AsyncTask<String, Long, Boolean> {
     private static final long DEFAULT_INTERVAL = 200;

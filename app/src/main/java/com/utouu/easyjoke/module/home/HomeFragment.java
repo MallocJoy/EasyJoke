@@ -1,29 +1,26 @@
 package com.utouu.easyjoke.module.home;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.flyco.tablayout.SlidingTabLayout;
-import com.pacific.adapter.FragmentStatePagerAdapter2;
 import com.utouu.easyjoke.R;
+import com.utouu.easyjoke.adapter.FragmentAdapter;
+import com.utouu.easyjoke.base.BaseFragment;
 import com.utouu.easyjoke.module.home.recomment.RecommendFragment;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Create by 黄思程 on 2016/12/15   17:41
  * Function：
  * Desc：
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
 
     private final String[] mTitles3 = {"推荐", "视频", "段友秀", "图片", "段子", "精华", "同城", "游戏"};
 
@@ -33,47 +30,25 @@ public class HomeFragment extends Fragment {
     ViewPager vpFirstPage;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.layout_firstpage, container, false);
-        ButterKnife.bind(this, rootView);
-
-        initData();
-
-        setAdapter();
-
-        initSlidingTabLayout();
-
-        return rootView;
+    protected int getLayout() {
+        return R.layout.layout_firstpage;
     }
 
-    private void initSlidingTabLayout() {
-        stLayout.setViewPager(vpFirstPage,mTitles3);
-        vpFirstPage.setCurrentItem(0);
-    }
+    @Override
+    protected void _initView(View view, Bundle bundle) {
+        loadFragment();
 
-    private void setAdapter() {
-        FragmentStatePagerAdapter2 adapter = new FragmentStatePagerAdapter2(getChildFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return mFragments.get(position);
-            }
-
-            @Override
-            public int getCount() {
-                return mFragments.size();
-            }
-        };
+        FragmentAdapter adapter = new FragmentAdapter(getChildFragmentManager(),mFragments);
         vpFirstPage.setAdapter(adapter);
+        stLayout.setViewPager(vpFirstPage,mTitles3);
         vpFirstPage.setCurrentItem(0);
     }
 
     /**
      * 添加Fragment页面
      */
-    private void initData() {
+    private void loadFragment() {
         mFragments.add(new RecommendFragment());
         mFragments.add(new RecommendFragment());
         mFragments.add(new RecommendFragment());

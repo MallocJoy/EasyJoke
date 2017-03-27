@@ -9,7 +9,7 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.orhanobut.logger.Logger;
 import com.utouu.easyjoke.R;
-import com.utouu.easyjoke.adapter.MainPageAdapter;
+import com.utouu.easyjoke.adapter.FragmentAdapter;
 import com.utouu.easyjoke.base.BaseMVPActivity;
 import com.utouu.easyjoke.entity.BaseEntity;
 import com.utouu.easyjoke.entity.main.MainEntity;
@@ -71,7 +71,7 @@ public class MainActivity extends BaseMVPActivity<IMainView, MainPresenter>
         ctLayout.setTabData(mTabEntities);
         titleSegment.setTabData(mTitles2);
 
-        MainPageAdapter adapter = new MainPageAdapter(getSupportFragmentManager(), mFragments);
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), mFragments);
         viewPager.setCanScrollble(false);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0);
@@ -137,6 +137,7 @@ public class MainActivity extends BaseMVPActivity<IMainView, MainPresenter>
                 titleText.setCenterString("消息");
                 break;
         }
+        viewPager.setCurrentItem(position);
     }
 
     @Override

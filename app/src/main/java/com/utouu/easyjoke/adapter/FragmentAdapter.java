@@ -12,11 +12,11 @@ import java.util.List;
  * Function：
  * Desc：主页面数据的adapter
  */
-public class MainPageAdapter extends FragmentStatePagerAdapter2 {
+public class FragmentAdapter extends FragmentStatePagerAdapter2 {
 
-    List<Fragment> fragments;
+    private List<Fragment> fragments;
 
-    public MainPageAdapter(FragmentManager fm,List<Fragment> fragments) {
+    public FragmentAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;
     }

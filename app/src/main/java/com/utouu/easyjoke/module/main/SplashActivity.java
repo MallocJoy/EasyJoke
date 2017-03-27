@@ -1,42 +1,46 @@
 package com.utouu.easyjoke.module.main;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
-import android.widget.TextView;
 
+import com.marno.easyutilcode.IntentUtil;
 import com.utouu.easyjoke.R;
+import com.utouu.easyjoke.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.bingoogolapple.bgabanner.BGABanner;
 
-public class SplashActivity extends AppCompatActivity {
-
+/**
+ * Create by 黄思程 on 2017/3/27  10:48
+ * Function：
+ * Desc：第一次进入应用的闪屏页
+ */
+public class SplashActivity extends BaseActivity {
     @BindView(R.id.BGABanner)
     BGABanner BGABanner;
-    @BindView(R.id.tv_skip)
-    TextView tvSkip;
-    @BindView(R.id.btn_enter)
-    Button btnEnter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
-
+    protected void _initView(Bundle bundle) {
         //设置点击跳转的监听
+        SharedPreferences splash = getSharedPreferences("splash", MODE_PRIVATE);
+        SharedPreferences.Editor edit = splash.edit();
         BGABanner.setEnterSkipViewIdAndDelegate(R.id.btn_enter, R.id.tv_skip, () -> {
-            startActivity(new Intent(SplashActivity.this,MainActivity.class));
-            finish();  });
+            IntentUtil.to(this,MainActivity.class);
+            edit.putBoolean("isFirst",true);
+            edit.apply();
+            finish();
+        });
 
         //设置数据
         BGABanner.setData(
                 R.drawable.bg_intros1,
                 R.drawable.bg_intros2,
                 R.drawable.bg_intros3);
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_splash;
     }
 
     @Override

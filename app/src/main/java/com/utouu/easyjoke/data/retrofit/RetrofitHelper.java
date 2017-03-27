@@ -1,8 +1,12 @@
 package com.utouu.easyjoke.data.retrofit;
 
+import com.orhanobut.logger.Logger;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -20,13 +24,13 @@ public class RetrofitHelper {
     private  RetrofitHelper() {
 
         OkHttpClient client = new OkHttpClient.Builder()
-                /*.addInterceptor(chain -> {
+                .addInterceptor(chain -> {
                     Request request = chain.request();
                     Response response = chain.proceed(request);
                     String s = request.url().encodedPath();
                     Logger.e(s);
                     return response;
-                })*/
+                })
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)

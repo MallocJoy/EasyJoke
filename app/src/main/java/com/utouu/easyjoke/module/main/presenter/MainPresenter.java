@@ -7,6 +7,8 @@ import com.utouu.easyjoke.entity.BaseEntity;
 import com.utouu.easyjoke.entity.main.MainEntity;
 import com.utouu.easyjoke.module.main.view.IMainView;
 
+import java.util.List;
+
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -27,7 +29,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
                 .GetMainPage()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<BaseEntity<MainEntity>>() {
+                .subscribe(new Subscriber<BaseEntity<List<MainEntity>>>() {
                     @Override
                     public void onCompleted() {
                         if (view != null) {
@@ -43,7 +45,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
                     }
 
                     @Override
-                    public void onNext(BaseEntity<MainEntity> entity) {
+                    public void onNext(BaseEntity<List<MainEntity>> entity) {
                         if (view != null) {
                             view.onGetMainPageSuccess(entity);
                         }

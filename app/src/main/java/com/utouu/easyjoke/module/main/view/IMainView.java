@@ -4,6 +4,8 @@ import com.utouu.easyjoke.base.IBaseStatusView;
 import com.utouu.easyjoke.entity.BaseEntity;
 import com.utouu.easyjoke.entity.main.MainEntity;
 
+import java.util.List;
+
 /**
  * Create by 黄思程 on 2017/3/20   17:25
  * Function：
@@ -15,7 +17,7 @@ public interface IMainView extends IBaseStatusView {
      * 获取主页面的数据
      * @param entity
      */
-    void onGetMainPageSuccess(BaseEntity<MainEntity> entity);
+    void onGetMainPageSuccess(BaseEntity<List<MainEntity>> entity);
 
     /**
      * 获取数据失败

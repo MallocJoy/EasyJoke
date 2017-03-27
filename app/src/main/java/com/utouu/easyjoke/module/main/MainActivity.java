@@ -23,6 +23,7 @@ import com.utouu.easyjoke.module.refresh.RefreshFragment;
 import com.utouu.easyjoke.widgets.NoScrollViewPager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -53,7 +54,6 @@ public class MainActivity extends BaseMVPActivity<IMainView, MainPresenter>
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private MainPageAdapter adapter;
 
     @Override
     protected void _initView(Bundle bundle) {
@@ -71,7 +71,7 @@ public class MainActivity extends BaseMVPActivity<IMainView, MainPresenter>
         ctLayout.setTabData(mTabEntities);
         titleSegment.setTabData(mTitles2);
 
-        adapter = new MainPageAdapter(getSupportFragmentManager(), mFragments);
+        MainPageAdapter adapter = new MainPageAdapter(getSupportFragmentManager(), mFragments);
         viewPager.setCanScrollble(false);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0);
@@ -90,7 +90,7 @@ public class MainActivity extends BaseMVPActivity<IMainView, MainPresenter>
     }
 
     @Override
-    public void onGetMainPageSuccess(BaseEntity<MainEntity> entity) {
+    public void onGetMainPageSuccess(BaseEntity<List<MainEntity>> entity) {
         Logger.d(entity.toString());
     }
 

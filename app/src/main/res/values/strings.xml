@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EasyJoke</string>
+    <string name="app_name">内涵段子</string>
 
     <!--首页Tab字段数组-->
     <array name="mainTabs">

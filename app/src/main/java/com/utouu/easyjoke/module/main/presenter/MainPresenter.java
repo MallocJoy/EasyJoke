@@ -18,13 +18,11 @@ import rx.schedulers.Schedulers;
  * Function：
  * Desc：
  */
-public class MainPresenter extends BasePresenter<IMainView> {
-    /**
-     * 获取主页面的数据
-     */
-    public void requestMainPage() {
-        IMainView view = getView();
+public class MainPresenter extends BasePresenter<IMainView> implements IMainPresenter{
+    private IMainView view = getView();
 
+    @Override
+    public void requestMainPage() {
         RetrofitHelper.create(IMainPage.class)
                 .GetMainPage()
                 .subscribeOn(Schedulers.newThread())

@@ -23,6 +23,7 @@ public class WelcomeActivity extends BaseActivity {
 
         if (!isFirst){
             IntentUtil.to(this,SplashActivity.class);
+            finish();
         }else {
             new CountDownTimer(2000,1000) {
                 @Override
@@ -33,6 +34,7 @@ public class WelcomeActivity extends BaseActivity {
                 @Override
                 public void onFinish() {
                     IntentUtil.to(WelcomeActivity.this,MainActivity.class);
+                    finish();
                 }
             }.start();
         }
